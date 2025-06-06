@@ -1,5 +1,6 @@
 import React from 'react';
 import Table, { TableColumn } from '../components/Table';
+import Link from '../components/Link';
 
 interface ExampleData {
   id: number;
