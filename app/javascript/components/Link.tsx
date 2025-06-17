@@ -10,6 +10,7 @@ interface LinkProps {
   disabled?: boolean;
   target?: string;
   rel?: string;
+  onClick: Function;
 }
 
 const Link: React.FC<LinkProps> = ({
@@ -21,6 +22,7 @@ const Link: React.FC<LinkProps> = ({
   disabled = false,
   target,
   rel,
+  onClick
 }) => {
   // Auto-detect external links
   const isExternal = external || href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:');
@@ -46,7 +48,6 @@ const Link: React.FC<LinkProps> = ({
     }
   };
 
-  // Render external link
   if (isExternal) {
     return (
       <a
